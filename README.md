@@ -16,6 +16,7 @@
 | `docker version` | Show installed Docker version. |
 | `systemctl status docker` | Check Docker service status. |
 | `systemctl start docker` | Start Docker service. |
+| `systemctl enable docker` | Enable Docker to start on boot. |
 
 ---
 
@@ -30,6 +31,7 @@
 | `docker rmi <image>` | Remove a local image. |
 | `docker build -t <name> .` | Build an image from a Dockerfile. |
 | `docker image inspect <name>` | Display detailed image information. |
+| `docker history <image>` | Show the history (layers) of an image. |
 
 ---
 
@@ -43,6 +45,7 @@
 * `docker run -it --name <name> <image>` : Run in interactive mode with a terminal.
 * `docker run -d --name <name> <image>` : Run in background (detached mode).
 * `docker run -p 8081:80 <image>` : Port mapping (Host:Container).
+* `docker run --restart always <image>` : Ensure container restarts automatically.
 
 ### 📋 Management
 
@@ -53,14 +56,20 @@
 | `docker stop <name>` | Stop a running container. |
 | `docker start <name>` | Start a stopped container. |
 | `docker rm <name>` | Delete a container. |
-| `docker container prune` | Remove all stopped containers. |
+| `docker rename <old> <new>` | Rename an existing container. |
 
-### 🔍 Debug & Access
+### 🔍 Debug & Monitoring
 
-* `docker inspect <name>` : View technical details (IP, config, etc.).
-* `docker logs <name>` : Show container logs.
+* `docker stats` : **Live stream** of container(s) resource usage (CPU/RAM).
+* `docker top <name>` : Display the running processes of a container.
+* `docker logs -f <name>` : Follow logs in real-time.
 * `docker exec -it <name> bash` : Open a terminal inside the container.
-* `CTRL + P + Q` : Exit container without stopping it.
+* `docker inspect <name>` : View technical details (IP, config, etc.).
+
+### 📂 File Transfer
+
+* `docker cp <host_path> <container>:<path>` : Copy file from Host to Container.
+* `docker cp <container>:<path> <host_path>` : Copy file from Container to Host.
 
 ---
 
@@ -70,7 +79,7 @@
 
 * `docker volume create <name>` : Create a named volume.
 * `docker volume ls` : List all volumes.
-* `docker volume inspect <name>` : Inspect volume details.
+* `docker volume rm <name>` : Delete a specific volume.
 * **Mounting:**
 * `docker run -v volume_name:/data <image>` : Use a named volume.
 * `docker run -v $(pwd):/app <image>` : Bind mount (current local directory).
@@ -86,7 +95,7 @@
 * `docker network ls` : List networks.
 * `docker network create <name>` : Create a new network.
 * `docker network connect <network> <container>` : Connect a container to a network.
-* `docker network rm <name>` : Remove a network.
+* `docker network disconnect <network> <container>` : Remove container from network.
 
 ---
 
@@ -97,37 +106,40 @@
 | Command | Description |
 | --- | --- |
 | `docker-compose up -d` | Start services in the background. |
-| `docker-compose down` | Stop and remove resources. |
+| `docker-compose down` | Stop and remove resources (containers, networks). |
 | `docker-compose ps` | List status of services. |
-| `docker-compose logs -f` | Follow logs in real-time. |
-| `docker-compose build` | Rebuild images defined in compose file. |
+| `docker-compose logs -f` | Follow all service logs. |
+| `docker-compose build --no-cache` | Rebuild images from scratch. |
 
 ---
 
 ## ☁️ 7. Docker Hub & Registries
 
-*Share your images.*
+*Share and store your images.*
 
 1. `docker login` : Login to the registry.
-2. `docker tag <local_image> <user>/<repo>:<tag>` : Tag image for upload.
+2. `docker tag <local_image> <user>/<repo>:<tag>` : Prepare image for upload.
 3. `docker push <user>/<repo>:<tag>` : Push image to Hub.
 
 ---
 
 ## 🏗️ 8. Orchestration (Swarm & Stack)
 
-*For server clusters.*
+*For server clusters and production deployments.*
 
 * `docker swarm init` : Initialize a swarm cluster.
 * `docker node ls` : List nodes in the cluster.
-* `docker service create --replicas 3 <image>` : Create a replicated service.
-* `docker stack deploy -c file.yml <name>` : Deploy a full stack.
+* `docker service create --name <name> --replicas 3 <image>` : Create a service.
+* `docker service scale <name>=5` : Scale a service to 5 replicas.
+* `docker stack deploy -c docker-compose.yml <stack_name>` : Deploy a stack.
 
 ---
 
-## 💽 9. System
+## 💽 9. System & Maintenance
 
 *Cleanup and diagnostics.*
 
 * `docker system df` : View Docker disk usage.
-* `docker system prune -a` : **Full cleanup** (removes all unused data).
+* `docker system prune` : Remove unused data (stopped containers, unused networks).
+* `docker system prune -a` : **Deep Cleanup** (removes all unused images and data).
+* `docker image prune` : Remove only dangling images (untagged).
