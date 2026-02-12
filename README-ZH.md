@@ -12,7 +12,9 @@
 
 | 命令 | 描述 |
 | --- | --- |
-| `yum install docker -y` | 安装 Docker（CentOS/RHEL）。 |
+| `sudo pacman -S docker` | 安装 Docker（Arch Linux）。 |
+| `sudo apt install docker.io` | 安装 Docker（Debian/Ubuntu/Pop!_OS）。 |
+| `sudo dnf install docker` | 安装 Docker（Fedora/RHEL）。 |
 | `docker version` | 显示已安装的 Docker 版本。 |
 | `systemctl status docker` | 检查 Docker 服务状态。 |
 | `systemctl start docker` | 启动 Docker 服务。 |

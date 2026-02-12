@@ -12,7 +12,9 @@
 
 | Comando | Descripción |
 | --- | --- |
-| `yum install docker -y` | Instalar Docker (CentOS/RHEL). |
+| `sudo pacman -S docker` | Instalar Docker (Arch Linux). |
+| `sudo apt install docker.io` | Instalar Docker (Debian/Ubuntu/Pop!_OS). |
+| `sudo dnf install docker` | Instalar Docker (Fedora/RHEL). |
 | `docker version` | Mostrar la versión instalada de Docker. |
 | `systemctl status docker` | Verificar el estado del servicio Docker. |
 | `systemctl start docker` | Iniciar el servicio Docker. |
