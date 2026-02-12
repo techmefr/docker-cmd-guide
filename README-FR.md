@@ -2,11 +2,11 @@
 
 ### 🌍 Langues / Languages
 
-[ 🇫🇷 Français ](https://www.google.com/search?q=%23-guide-complet-des-commandes-docker) | [ 🇬🇧 English ](https://www.google.com/search?q=./english.md) | [ 🇪🇸 Español ](https://www.google.com/search?q=./spanish.md) | [ 🇮🇹 Italiano ](https://www.google.com/search?q=./italian.md) | [ 🇩🇪 Deutsch ](https://www.google.com/search?q=./german.md) | [ 🇵🇹 Português ](https://www.google.com/search?q=./portuguese.md) | [ 🇨🇳 中文 ](https://www.google.com/search?q=./chinese.md)
+[🇬🇧 English](./README.md) | [🇫🇷 Français](./README-FR.md) | [🇪🇸 Español](./README-ES.md) | [🇮🇹 Italiano](./README-IT.md) | [🇩🇪 Deutsch](./README-DE.md) | [🇵🇹 Português](./README-PT.md) | [🇨🇳 中文](./README-ZH.md)
 
 ---
 
-## 📦 1. Installation & Service
+## 🔧 1. Installation & Service
 
 *Gestion du daemon et vérification de l'état.*
 
@@ -19,7 +19,7 @@
 
 ---
 
-## 🖼️ 2. Images Docker
+## 💿 2. Images Docker
 
 *Les modèles en lecture seule utilisés pour créer des conteneurs.*
 
@@ -125,7 +125,7 @@
 
 ---
 
-## 💽 9. Système
+## 🧹 9. Système
 
 *Nettoyage et diagnostic.*
 

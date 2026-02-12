@@ -2,11 +2,11 @@
 
 ### 🌍 Languages
 
-[ 🇬🇧 English ](https://www.google.com/search?q=%23-complete-docker-cli-reference-guide) | [ 🇫🇷 Français ](https://www.google.com/search?q=./README-FR.md) | [ 🇪🇸 Español ](https://www.google.com/search?q=./README-ES.md) | [ 🇮🇹 Italiano ](https://www.google.com/search?q=./README-IT.md) | [ 🇩🇪 Deutsch ](https://www.google.com/search?q=./README-DE.md) | [ 🇵🇹 Português ](https://www.google.com/search?q=./README-PT.md) | [ 🇨🇳 中文 ](https://www.google.com/search?q=./README-ZH.md)
+[🇬🇧 English](./README.md) | [🇫🇷 Français](./README-FR.md) | [🇪🇸 Español](./README-ES.md) | [🇮🇹 Italiano](./README-IT.md) | [🇩🇪 Deutsch](./README-DE.md) | [🇵🇹 Português](./README-PT.md) | [🇨🇳 中文](./README-ZH.md)
 
 ---
 
-## 📦 1. Installation & Service
+## 🔧 1. Installation & Service
 
 *Daemon management and system status.*
 
@@ -20,7 +20,7 @@
 
 ---
 
-## 🖼️ 2. Docker Images
+## 💿 2. Docker Images
 
 *Read-only templates used to create containers.*
 
@@ -135,7 +135,7 @@
 
 ---
 
-## 💽 9. System & Maintenance
+## 🧹 9. System & Maintenance
 
 *Cleanup and diagnostics.*
 
